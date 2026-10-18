@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: socialdesk-api
+    runtime: docker
+    plan: starter
+    rootDir: backend
+    healthCheckPath: /health
+    envVars:
+      - key: SOCIALDESK_API_KEY
+        generateValue: true
+      - key: SOCIALDESK_PAGES_JSON
+        sync: false
+      - key: META_GRAPH_VERSION
+        value: v26.0
